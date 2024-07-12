@@ -15,7 +15,8 @@ int main(){
     printf("fork returned value: %d\n", (int) pid);
 
     if(pid < 0){
-        printf("Fork Failed!");
+        perror("Fork failed");
+        exit(1);
     }
     if (pid == 0){
         printf("Child Process PID = %d\n", (int) getpid());
@@ -24,7 +25,7 @@ int main(){
     }
     printf("Parent process waiting for Child to terminate!\n");
     wait(NULL);
-    printf("Parent process exiting!\n");
+    printf("Child Process terminated..\nParent process exiting!\n");
     return 0;
 }
 

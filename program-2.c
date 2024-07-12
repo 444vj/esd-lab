@@ -35,6 +35,21 @@ int main()
     return 0;
 }
 
+//Exam -  demonstrate the usage of signal : when CTRL + C is pressed signal is ignored 
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <signal.h>
+
+int main() {
+   // Press Ctrl+C to ignore (SIGINT)
+   signal(SIGINT, SIG_IGN); 
+   while (1) {
+       printf("Press Ctrl+C (ignored)...\n");
+       sleep(1);
+    }
+   return 0;
+}
 
 
 // lab codes
@@ -57,17 +72,5 @@ int main()
     {
         printf("Hello\n");
         sleep(2);
-    }
-}
-
-
-// demonstrate the usage of signal : when CTRL + C is pressed signal is ignored 
-int main()
-{
-    (void) signal(SIGINT, SIG_IGN);
-    while(1)
-    {
-        printf("%d\n", getpid());
-        sleep(1);
     }
 }
