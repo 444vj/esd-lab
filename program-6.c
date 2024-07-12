@@ -1,4 +1,5 @@
-//program-6
+//program-6 - MESSAGE QUEUE
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>

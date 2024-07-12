@@ -1,7 +1,9 @@
 //program-3
 
 //Write a C program for : One thread reads the input from the keyboard and another thread converts to upper case. 
-//This is done until "STOP" is pressed. Use concept of multithreading
+//This is done until "STOP" is pressed. 
+//Use concept of multithreading 
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -23,6 +25,7 @@ void *read_thread(void *arg)
   pthread_exit ("read_thread exit successful");
 }
 
+
 void *convert_thread()
 {
     int i;
@@ -37,6 +40,7 @@ void *convert_thread()
     }
     pthread_exit ("convert_thread exit successful");
 }
+
 
 int main ()
 {

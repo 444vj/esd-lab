@@ -11,6 +11,7 @@
 #include <semaphore.h>
 
 #define BUFFER_SIZE 1024
+
 sem_t sem;
 char buffer[BUFFER_SIZE];
 
@@ -25,6 +26,7 @@ void *read_thread(void *arg)
     }
     pthread_exit("read_thread exit successful");
 }
+
 
 void *convert_thread()
 {
@@ -41,6 +43,7 @@ void *convert_thread()
     }
     pthread_exit("convert_thread exit successful");
 }
+
 
 int main()
 {

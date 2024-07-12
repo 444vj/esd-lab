@@ -4,15 +4,7 @@
 #include <unistd.h>
 #include <sys/wait.h>
 #include <stdlib.h>
-// creation of processes using fork
-int main()
-{
-    fork();
-    fork();
-    fork();
-    printf("Hello\n");
-    return 0;
-}
+
 
 // to demonstrate the usage of fork & wait
 int main(){
@@ -36,23 +28,6 @@ int main(){
     return 0;
 }
 
-// fork example
-void fork_example()
-{
-    int x = 1;
-    if(fork() == 0){
-        printf("Child has x = %d\n", ++x);
-    }
-    else{
-        printf("Parent has x = %d\n", --x)
-    }
-}
-
-int main()
-{
-    fork_example();
-    return 0;
-}
 
 
 // extra
