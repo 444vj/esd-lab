@@ -3,6 +3,7 @@
 
 void Delay(unsigned int dms)
 {
+    int delay_ms;
     delay_ms = dms;
     while (delay_ms > 0)
     {
@@ -12,10 +13,9 @@ void Delay(unsigned int dms)
 
 unsigned int i, delay_ms, segval;
 
-unsigned char index, lcdval, row, 
+unsigned char row, 
               keyscan, keyret, 
-              keynum = 0, keypress, 
-              scanret = 0xFF;
+              keynum = 0;
 
 unsigned char seg7[] = { 
                         0x3f, 0x06, 0x5b, 0x4f, 0x66, 0x6d, 
@@ -77,7 +77,6 @@ void GetKey()
 void main()
 {
     InitLPC();
-    index = 0;
     while (1)
     {
         GetKey();
